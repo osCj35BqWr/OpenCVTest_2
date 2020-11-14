@@ -1,0 +1,12 @@
+version: "3"
+services:
+  app3:
+    build:
+      context: ./python
+      dockerfile: "Dockerfile.dev"
+    command: python .prehook/sigcatch.py
+    volumes:
+      - ../python:/app
+      - python-packages:/root/.local/share
+volumes:
+  python-packages:
